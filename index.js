@@ -9,7 +9,7 @@ const start = () => {
     {
   type: 'list',
   message: "What would you like to do?",
-      choices: ['View All Employee', 'View All Department', 'View All Roles', 'Add Employee', 'Add A Role', 'Add A Department', 'Update Employee Role'],
+      choices: ['View All Employee', 'View All Department', 'View All Roles', 'Add Employee', 'Add A Role', 'Add A Department', 'Update Employee Role', 'Leave'],
   name: 'todo'
     }
   ])
@@ -51,6 +51,10 @@ const start = () => {
       case 'Add A Department':
         addDepartment()
 
+      break;
+
+      case 'Leave':
+        end()
       break;
       }
     })
@@ -162,3 +166,9 @@ function addEmployees() {
     })
 }
 
+function end() {
+  console.log('Counting down 5 seconds')
+  setTimeout((function () {
+    return process.exit(22);
+  }), 5000);
+}

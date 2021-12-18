@@ -1,5 +1,7 @@
-const function = requires('functions')
-
+const mysql = require('mysql2')
+const table = require('console.table')
+const inquirer = require('inquirer')
+const { seeEmployees, seeDepartments, seeRoles, addEmployees, addRole, addDepartment } = require('./function')
 
 const start = () => {
   inquirer.prompt([
@@ -13,12 +15,12 @@ const start = () => {
     switch ( todo )  {
 
       case 'View All Employee': {
-
+        seeRoles()
       } 
       break
 
       case 'View All Employee By Department': {
-
+        seeDepartments()
       }
       break
 
@@ -28,7 +30,7 @@ const start = () => {
         break
 
       case 'Add Employee': {
-
+        
       }
         break
 
@@ -98,3 +100,5 @@ const start = () => {
     ])
   }
 }
+
+start()

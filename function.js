@@ -1,10 +1,12 @@
 const mysql = require('mysql2')
+const db = mysql.createConnection('mysql://root:Lohas199312!@localhost:3306/users_db')
+
 
 //VIEW Functions for ALL employees
 function seeEmployees = () => {
   db.query('SELECT * FROM employees', (err, employees) => {
     if (err) { console.log(err) }
-    console.log(employees)
+    console.table(employees)
   })
 }
 
@@ -13,7 +15,7 @@ function seeEmployees = () => {
 function seeRoles = () => {
   db.query('SELECT * FROM roles', (err, roles) => {
     if (err) { console.log(err) }
-    console.log(roles)
+    console.table(roles)
   })
 }
 
@@ -23,7 +25,7 @@ function seeRoles = () => {
 function seeDepartments = () => {
   db.query('SELECT * FROM departments', (err, departments) => {
     if (err) { console.log(err) }
-    console.log(departments)
+    console.table(departments)
   })
 }
 
@@ -33,7 +35,7 @@ function seeDepartments = () => {
 function addEmployees = (newEmployee) => {
   db.query('INSERT INTO employees SET ?', newEmployee, err => {
     if (err) { console.log(err) }
-    console.log(newEmployee)
+    console.table(newEmployee)
   })
 }
 
@@ -43,7 +45,7 @@ function addEmployees = (newEmployee) => {
 function addRole = (newRole) => {
   db.query('INSERT INTO employees SET ?', newRole, err => {
     if (err) { console.log(err) }
-    console.log(newRole)
+    console.table(newRole)
   })
 }
 
@@ -52,8 +54,15 @@ function addRole = (newRole) => {
 function addDepartment = (newDepartment) => {
   db.query('INSERT INTO employees SET ?', newDepartment, err => {
     if (err) { console.log(err) }
-    console.log(newDepartment)
+    console.table(newDepartment)
   })
 }
 
-module.exports = functions
+module.exports = {
+  seeEmployees: seeEmployees,
+  seeRoles: seeRoles,
+  seeDepartments: seeDepartments,
+  addEmployees: addEmployees,
+  addRole: addRole,
+  addDepartment: addDepartment
+}

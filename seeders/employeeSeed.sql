@@ -1,4 +1,4 @@
-use employees;
+use employee_db;
 
 INSERT INTO department
     (name)
@@ -21,7 +21,7 @@ VALUES
     ('Lawyer', 190000, 4);
 
 INSERT INTO employee
-    (first_name, last_name, , manager_id, role_id)
+    (first_name, last_name, manager_id, role_id)
 VALUES
     ('Big', 'Mike', 1, NULL),
     ('Small', 'Mike', 2, 1),

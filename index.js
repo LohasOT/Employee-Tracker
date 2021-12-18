@@ -153,7 +153,7 @@ function addEmployees() {
       },
       {
         type: 'input',
-        message: "What is the employees' manager ID",
+        message: "What is the employees's manager ID",
         name: 'manager_id'
       }
     ])

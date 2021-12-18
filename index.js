@@ -6,7 +6,59 @@ const start = () => {
   choices: ['View All Employee', 'View All Employee By Department', 'View All Employee By Manager', 'Add Employee', 'Remove Employee', 'Update Employee Role', 'Update Employee Manager', 'View All Roles'],
   name: 'todo'
     }
-  ])
+  .then(({ todo }) => {
+    switch ( todo )  {
+
+      case 'View All Employee': {
+
+      } 
+      break
+
+      case 'View All Employee By Department': {
+
+      }
+      break
+
+      case 'View All Employee By Manager': {
+
+      }
+        break
+
+      case 'Add Employee': {
+
+      }
+        break
+
+      case 'Remove Employee': {
+
+      }
+        break
+
+      case 'Update Employee Role': {
+
+      }
+        break
+
+      case 'Update Employee Manager': {
+
+      }
+        break
+
+      case 'View All Roles': {
+
+      }
+        break
+
+
+
+
+
+
+
+
+
+
+}
   .then(answer => {
     if (answer.todo === 'Add Employee') {
     inquirer.prompt([
@@ -21,13 +73,12 @@ const start = () => {
         name: 'lastName'
       },
       {
-        type: 'list',
-        message: "What is the employee's role?",
-        choices: ['Sales Lead', 'Salesperson', 'Lead Engineer', 'Software Engineer', 'Account Manager', 'Accountaint', 'Legal Team Lead'],
+        type: 'input',
+        message: "What is the employee's role ID?",
         name: 'role'
       },
       {
-        type: 'list',
+        type: 'confirm',
         message: "Who is the employee's manager?",
         choices: [],
         name: 'manager'

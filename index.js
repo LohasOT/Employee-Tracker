@@ -35,6 +35,7 @@ const start = () => {
 
       case 'Update Employee Role': 
 
+
       
       break;
 
@@ -166,9 +167,17 @@ function addEmployees() {
     })
 }
 
+function updateEmployeeRoles() {
+  
+}
+
+
+
+
 function end() {
   console.log('Good Bye')
   setTimeout((function () {
     return process.exit(22);
   }), 0);
 }
+

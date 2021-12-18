@@ -51,7 +51,7 @@ const start = () => {
       case 'Add A Department':
         addDepartment()
 
-        break;
+      break;
       }
     })
   }

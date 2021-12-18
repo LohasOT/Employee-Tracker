@@ -121,7 +121,7 @@ function addDepartment() {
   ])
   .then (newDepartment => {
     console.log(newDepartment)
-    db.query('INSERT INTO employee SET ?', newDepartment, err => {
+    db.query('INSERT INTO department SET ?', newDepartment, err => {
       if (err) { console.log(err) }
       console.log('New Department Added')
       start()

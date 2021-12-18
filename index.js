@@ -71,6 +71,7 @@ function seeRoles() {
       db.query('SELECT * FROM role', (err, roles) => {
         if (err) { console.log(err) }
         console.table(roles)
+        start()
       })
     }
 

@@ -35,7 +35,7 @@ const start = () => {
 
       case 'Update Employee Role': 
 
-
+        updateEmployeeRoles()
       
       break;
 
@@ -168,7 +168,29 @@ function addEmployees() {
 }
 
 function updateEmployeeRoles() {
-  
+  db.query('SELECT * FROM employee', (err, employees) => {
+    if (err) { console.log(err) }
+    console.table(employees)
+  inquirer.prompt([
+    {
+      type: 'input',
+      message: "Which employee would you like to update?",
+      name: 'first_name'
+    },
+    {
+      type: 'input',
+      message: "What is the employee new role id?",
+      name: 'role_id'
+    }
+  ])
+    .then (updateEmployee => {
+      db.query('UPDATE employee SET ? WHERE ?', [{role_id: updateEmployee.role_id}, { first_name: updateEmployee.first_name }], () => {
+      if(err) { console.log(err) }
+      console.log('Employee Role Updated')
+      start()
+      })
+    })
+  })
 }
 
 

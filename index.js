@@ -1,3 +1,6 @@
+const function = requires('functions')
+
+
 const start = () => {
   inquirer.prompt([
     {

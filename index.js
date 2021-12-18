@@ -9,7 +9,7 @@ const start = () => {
     {
   type: 'list',
   message: "What would you like to do?",
-      choices: ['View All Employee', 'View All Department', 'View All Employee By Manager', 'Add Employee', 'Remove Employee', 'Update Employee Role', 'Update Employee Manager', 'View All Roles', 'Add A Role' ],
+      choices: ['View All Employee', 'View All Department', 'View All Roles', 'Add Employee', 'Add A Role', 'Add A Department', 'Update Employee Role'],
   name: 'todo'
     }
   ])
@@ -28,27 +28,12 @@ const start = () => {
       
       break;
 
-      case 'View All Employee By Manager': 
-
-      
-      break;
-
       case 'Add Employee': 
         addEmployees()
       
       break;
 
-      case 'Remove Employee': 
-
-      
-      break;
-
       case 'Update Employee Role': 
-
-      
-      break;
-
-      case 'Update Employee Manager': 
 
       
       break;
@@ -60,6 +45,11 @@ const start = () => {
 
       case 'Add A Role':
         addRole()
+
+      break;
+
+      case 'Add A Department':
+        addDepartment()
 
         break;
       }
@@ -170,15 +160,3 @@ function addEmployees() {
     })
 }
 
-
-
-  //   } else if (answer.todo === 'Remove Employee') {
-  //     inquirer.prompt([
-  //     {
-  //       type: 'list',
-  //       message: "Which employee would you like to remove?",
-  //       choices: [],
-  //       name: 'remove'
-  //     }
-  //   ])
-  // }

@@ -33,7 +33,7 @@ function seeDepartments () {
 //ADD Functions for Employees 
 
 function addEmployees (newEmployee) {
-  db.query('INSERT INTO employees SET ?', newEmployee, err => {
+  db.query('INSERT INTO employee SET ?', newEmployee, err => {
     if (err) { console.log(err) }
     console.table(newEmployee)
   })
@@ -43,7 +43,7 @@ function addEmployees (newEmployee) {
 //ADD Functions for Role
 
 function addRole (newRole) {
-  db.query('INSERT INTO employees SET ?', newRole, err => {
+  db.query('INSERT INTO employee SET ?', newRole, err => {
     if (err) { console.log(err) }
     console.table(newRole)
   })
@@ -52,7 +52,7 @@ function addRole (newRole) {
 //ADD Functions for Department
 
 function addDepartment (newDepartment)  {
-  db.query('INSERT INTO employees SET ?', newDepartment, err => {
+  db.query('INSERT INTO employee SET ?', newDepartment, err => {
     if (err) { console.log(err) }
     console.table(newDepartment)
   })

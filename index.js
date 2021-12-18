@@ -9,7 +9,7 @@ const start = () => {
     {
   type: 'list',
   message: "What would you like to do?",
-  choices: ['View All Employee', 'View All Department', 'View All Employee By Manager', 'Add Employee', 'Remove Employee', 'Update Employee Role', 'Update Employee Manager', 'View All Roles'],
+      choices: ['View All Employee', 'View All Department', 'View All Employee By Manager', 'Add Employee', 'Remove Employee', 'Update Employee Role', 'Update Employee Manager', 'View All Roles', 'Add A Role' ],
   name: 'todo'
     }
   ])
@@ -57,6 +57,11 @@ const start = () => {
         seeRoles()
       
       break;
+
+      case 'Add A Role':
+        addRole()
+
+        break;
       }
     })
   }
@@ -78,10 +83,39 @@ function seeRoles() {
       })
     }
 
+function addRole() {
+  inquirer.prompt([
+    {
+      type: 'input',
+      message: "What is title of the role?",
+      name: 'title'
+    },
+    {
+      type: 'input',
+      message: "What is the salary of the role?",
+      name: 'salary'
+    },
+    {
+      type: 'input',
+      message: "What is the department ID?",
+      name: 'department_id'
+    }
+  ])
+    .then(newRole => {
+      console.log(newRole)
+      db.query('INSERT INTO role SET ?', newRole, err => {
+        if (err) { console.log(err) }
+        console.log('New Role Added')
+        start()
+      })
+    })
+}  
+
 function seeEmployees() {
   db.query('SELECT * FROM employee', (err, employees) => {
     if (err) { console.log(err) }
     console.table(employees)
+    start()
   })
 }
 

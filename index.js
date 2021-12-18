@@ -174,7 +174,7 @@ function updateEmployeeRoles() {
   inquirer.prompt([
     {
       type: 'input',
-      message: "Which employee would you like to update?",
+      message: "Which employee would you like to update? (Type in first name)",
       name: 'first_name'
     },
     {
@@ -197,6 +197,6 @@ function end() {
   console.log('Good Bye')
   setTimeout((function () {
     return process.exit(22);
-  }), 0);
+  }), 5000);
 }
 

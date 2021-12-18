@@ -193,9 +193,6 @@ function updateEmployeeRoles() {
   })
 }
 
-
-
-
 function end() {
   console.log('Good Bye')
   setTimeout((function () {

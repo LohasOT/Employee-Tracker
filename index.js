@@ -197,6 +197,6 @@ function end() {
   console.log('Good Bye')
   setTimeout((function () {
     return process.exit(22);
-  }), 5000);
+  }), 0);
 }
 

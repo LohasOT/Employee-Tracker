@@ -167,8 +167,7 @@ function addEmployees() {
 }
 
 function end() {
-  console.log('Counting down 5 seconds')
   setTimeout((function () {
     return process.exit(22);
-  }), 5000);
+  }), 0);
 }
